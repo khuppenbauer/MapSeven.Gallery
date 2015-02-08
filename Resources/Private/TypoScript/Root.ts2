@@ -1,6 +1,7 @@
 include: NodeTypes/Image.ts2
 include: NodeTypes/Gallery.ts2
 include: NodeTypes/TagGallery.ts2
+include: NodeTypes/Carousel.ts2
 namespace: TypoScript=TYPO3.TypoScript
 
 page = Page {

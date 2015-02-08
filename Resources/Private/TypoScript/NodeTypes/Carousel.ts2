@@ -1,0 +1,22 @@
+prototype(MapSeven.Gallery:Carousel) {
+	attributes.class = 'row'
+	image = TYPO3.Neos:ContentCollection {
+		nodePath = 'image'
+		iterationName = 'carouselItemsIteration'
+		attributes.class = 'owl-carousel owl-theme col-md-12'
+		attributes.id = ${'owl-carousel-' + node.identifier}
+	}
+	pagination = ${q(node).property('pagination') ? 'true' : 'false'}
+	navigation = ${q(node).property('navigation') ? 'true' : 'false'}
+	autoPlay = ${q(node).property('autoPlay') ? 'true' : 'false'}
+	stopOnHover = ${q(node).property('stopOnHover') ? 'true' : 'false'}
+
+	carouselItemArray = ${q(node).children('image').children('[instanceof MapSeven.Gallery:CarouselImage]')}
+	// Enhance image prototype for the carousel
+	prototype(MapSeven.Gallery:CarouselImage) {
+		// Render images in the carousel with a special template.
+		templatePath = 'resource://MapSeven.Gallery/Private/Templates/TypoScriptObjects/CarouselItem.html'
+		// We want to use the item iterator in the template so we have to store it in ts.
+		iteration = ${carouselItemsIteration}
+	}
+}

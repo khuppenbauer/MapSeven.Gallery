@@ -119,6 +119,87 @@
         inspector:
           group: 'settings'
 
+'MapSeven.Gallery:Carousel':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Column'
+  ui:
+    label: 'Carousel'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'settings':
+          label: 'Carousel Settings'
+  childNodes:
+    'image':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'MapSeven.Gallery:CarouselImage': TRUE
+          '*': FALSE
+  properties:
+    items:
+      type: string
+      defaultValue: '1'
+      ui:
+        label: 'Items displayed at a time'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '1':
+                label: '1'
+              '2':
+                label: '2'
+              '3':
+                label: '3'
+              '4':
+                label: '4'
+              '5':
+                label: '5'
+              '6':
+                label: '6'
+              '7':
+                label: '7'
+              '8':
+                label: '8'
+    navigation:
+      type: boolean
+      ui:
+        label: 'Show Navigation'
+        inspector:
+          group: 'settings'
+    pagination:
+      type: boolean
+      ui:
+        label: 'Show Pagination'
+        inspector:
+          group: 'settings'
+    autoPlay:
+      type: boolean
+      ui:
+        label: 'Autoplay'
+        inspector:
+          group: 'settings'
+    stopOnHover:
+      type: boolean
+      ui:
+        label: 'Stop on hover'
+        inspector:
+          group: 'settings'
+
+# use this only for gallery images
+'MapSeven.Gallery:CarouselImage':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:ImageMixin'
+  ui:
+    label: 'Image'
+    icon: 'icon-picture'
+
 # Gallery Settings mixin
 'MapSeven.Gallery:GallerySettingsMixin':
   abstract: TRUE
