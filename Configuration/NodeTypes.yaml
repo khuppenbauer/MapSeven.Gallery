@@ -1,0 +1,15 @@
+'TYPO3.Neos.NodeTypes:Image':
+  properties:
+    clickEnlarge:
+      type: boolean
+      ui:
+        label: 'ClickEnlarge'
+        inspector:
+          group: 'image'
+    showInGallery:
+      type: string
+      ui:
+        label: 'show also in Gallery'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'

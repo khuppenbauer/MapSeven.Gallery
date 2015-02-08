@@ -1,0 +1,13 @@
+{
+    "name": "mapseven/gallery",
+    "type": "typo3-flow-plugin",
+    "description": "Gallery NodeTypes for TYPO3 Neos",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MapSeven\\Gallery": "Classes"
+        }
+    }
+}

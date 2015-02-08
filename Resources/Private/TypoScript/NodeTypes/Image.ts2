@@ -1,0 +1,6 @@
+prototype(TYPO3.Neos.NodeTypes:Image) {
+	templatePath = 'resource://MapSeven.Gallery/Private/Templates/NodeTypes/Image.html'
+	imgClass = ${Configuration.setting('MapSeven.Gallery.imgClass')}
+	lightboxWidth = ${Configuration.setting('MapSeven.Gallery.lightboxWidth')}
+	lightboxHeight = ${Configuration.setting('MapSeven.Gallery.lightboxHeight')}
+}
