@@ -1,0 +1,29 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<f:if condition="{previewImage}">
+    <f:then>
+        <a href="{media:uri.image(asset:previewImage, maximumWidth:settings.lightboxWidth, maximumHeight:settings.lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-gallery="{gallery}" class="thumbnail" data-title="{properties.title}" data-footer="1/{count}">
+            <media:image asset="{previewImage}" alt="{f:if(condition: previewImage.title, then: previewImage.title, else: previewImage.resource.filename)}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" class="{settings.imgClass}" />
+        </a>
+    </f:then>
+    <f:else>
+        <div class="row">
+    </f:else>
+</f:if>
+<f:for each="{assets}" as="image" key="key" iteration="assetsIterator">
+    <f:if condition="{previewImage}">
+        <f:then>
+            <div data-toggle="lightbox" data-gallery="{gallery}" data-title="{properties.title}" data-footer="{key}/{count}" data-remote="{media:uri.image(asset:image, maximumWidth:settings.lightboxWidth, maximumHeight:settings.lightboxHeight, allowUpScaling:true)}"></div>
+        </f:then>
+        <f:else>
+            <a href="{media:uri.image(asset:image, maximumWidth:settings.lightboxWidth, maximumHeight:settings.lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-gallery="{gallery}" class="col-sm-{properties.columns} thumbnail" data-title="{properties.title}" data-footer="{assetsIterator.cycle}/{count}" style="margin-bottom: {properties.marginBottom}px;">
+                <media:image asset="{image}" alt="{f:if(condition: image.title, then: image.title, else: image.resource.filename)}" maximumWidth="{maximunWidth}" maximumHeight="{maximumHeight}" class="{settings.imgClass}" />
+            </a>
+        </f:else>
+    </f:if>
+</f:for>
+<f:if condition="{previewImage}">
+    <f:else>
+        </div>
+    </f:else>
+</f:if>

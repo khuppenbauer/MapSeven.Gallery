@@ -1,0 +1,5 @@
+prototype(MapSeven.Gallery:TagGallery) < prototype(TYPO3.Neos:Plugin) {
+	package = 'MapSeven.Gallery'
+	controller = 'TagGallery'
+	action = 'index'
+}

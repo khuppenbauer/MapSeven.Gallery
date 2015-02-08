@@ -1,0 +1,9 @@
+
+resources:
+  methods:
+    MapSeven_Gallery_TagGallery: 'method(MapSeven\Gallery\Controller\TagGalleryController->indexAction())'
+
+acls:
+  Everybody:
+    methods:
+      MapSeven_Gallery_TagGallery: GRANT

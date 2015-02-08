@@ -65,6 +65,60 @@
         inspector:
           group: 'image'
 
+'MapSeven.Gallery:TagGallery':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'MapSeven.Gallery:GallerySettingsMixin'
+  ui:
+    label: 'Tag Gallery'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inspector:
+      groups:
+        'settings':
+          label: 'Gallery Settings'
+  properties:
+    width:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Image Width'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    height:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Image Height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    title:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Title'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    tags:
+      type: array
+      ui:
+        label: 'Tags'
+        inspector:
+          group: 'settings'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'mapseven-gallery-tag'
+    previewImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'previewImage'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+
 # Gallery Settings mixin
 'MapSeven.Gallery:GallerySettingsMixin':
   abstract: TRUE
