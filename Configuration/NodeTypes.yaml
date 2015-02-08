@@ -1,3 +1,8 @@
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'MapSeven.Gallery:Image': FALSE
+
 'TYPO3.Neos.NodeTypes:Image':
   properties:
     clickEnlarge:
@@ -13,3 +18,102 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'image'
+
+'MapSeven.Gallery:Gallery':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Column'
+    - 'MapSeven.Gallery:GallerySettingsMixin'
+  ui:
+    label: 'Gallery'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'settings':
+          label: 'Gallery Settings'
+  childNodes:
+    image:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'MapSeven.Gallery:Image': TRUE
+          '*': FALSE
+
+# use this only for gallery images
+'MapSeven.Gallery:Image':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:ImageMixin'
+  ui:
+    label: 'Image'
+    icon: 'icon-picture'
+  properties:
+    caption:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Caption'
+        reloadIfChanged: TRUE
+        inlineEditable: FALSE
+        inspector:
+          group: 'image'
+    hideInOverview:
+      type: boolean
+      ui:
+        label: 'Hide in Overview'
+        inspector:
+          group: 'image'
+
+# Gallery Settings mixin
+'MapSeven.Gallery:GallerySettingsMixin':
+  abstract: TRUE
+  properties:
+    marginBottom:
+      type: string
+      defaultValue: 'margin-bottom-20'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Margin Bottom'
+        inspector:
+          group: 'settings'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '0':
+                label: ''
+              '5':
+                label: '5'
+              '10':
+                label: '10'
+              '15':
+                label: '15'
+              '20':
+                label: '20'
+              '25':
+                label: '25'
+              '30':
+                label: '30'
+    columns:
+      type: string
+      defaultValue: '3'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Images per Row'
+        inspector:
+          group: 'settings'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '1':
+                label: '12'
+              '2':
+                label: '6'
+              '3':
+                label: '4'
+              '4':
+                label: '3'
+              '6':
+                label: '2'
+              '12':
+                label: '1'

@@ -1,0 +1,17 @@
+prototype(MapSeven.Gallery:Gallery) {
+	attributes.class = 'row'
+	image = TYPO3.Neos:ContentCollection {
+		nodePath = 'image'
+		iterationName = 'galleryItemsIteration'
+	}
+
+	// Enhance image prototype for the gallery
+	prototype(MapSeven.Gallery:Image) {
+		templatePath = 'resource://MapSeven.Gallery/Private/Templates/TypoScriptObjects/GalleryItem.html'
+		iteration = ${galleryItemsIteration}
+		count = ${q(node).parents().children('[instanceof MapSeven.Gallery:Image]').count()}
+		imgClass = ${Configuration.setting('MapSeven.Gallery.imgClass')}
+		lightboxWidth = ${Configuration.setting('MapSeven.Gallery.lightboxWidth')}
+		lightboxHeight = ${Configuration.setting('MapSeven.Gallery.lightboxHeight')}
+	}
+}

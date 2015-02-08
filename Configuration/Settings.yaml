@@ -4,3 +4,11 @@ TYPO3:
     typoScript:
       autoInclude:
         MapSeven.Gallery: true
+
+MapSeven:
+  Gallery:
+    imgClass: img-responsive
+    lightboxWidth: 640
+    lightboxHeight: 480
+    maximumWidth: 1024
+    maximumHeight: 768
