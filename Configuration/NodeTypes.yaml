@@ -2,6 +2,7 @@
   constraints:
     nodeTypes:
       'MapSeven.Gallery:Image': FALSE
+      'MapSeven.Gallery:CarouselImage': FALSE
 
 'TYPO3.Neos.NodeTypes:Image':
   properties:

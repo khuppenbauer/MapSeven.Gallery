@@ -11,7 +11,7 @@
             <f:else>
                 <f:if condition="{clickEnlarge}">
                     <f:then>
-                        <a class="thumbnail" href="{media:uri.image(asset:image.originalImage, maximumWidth:lightboxWidth, maximumHeight:lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-title="{title}" data-parent="" data-gallery="{showInGallery -> f:format.stripTags()}" data-footer="{f:if(condition: hasCaption, then: caption -> f:format:stripTags(), else: '')}">
+                        <a class="thumbnail" href="{media:uri.image(asset:image.originalImage, maximumWidth:lightboxWidth, maximumHeight:lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-title="{title}" data-parent="" data-gallery="{showInGallery -> f:format.stripTags()}" data-footer="{caption -> f:format.stripTags()}">
                         <media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping
 }" allowUpScaling="{allowUpScaling}" class="{imgClass}" /></a>
                     </f:then>
