@@ -220,8 +220,84 @@
   ui:
     label: 'Image'
     icon: 'icon-picture'
+    inspector:
+      groups:
+        'caption':
+          label: 'Caption'
+  properties:
+    caption:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Caption'
+        reloadIfChanged: TRUE
+        inlineEditable: FALSE
+        inspector:
+          group: 'caption'
+    captionAlignment:
+      type: string
+      defaultValue: 'bottom center'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Caption Alignment'
+        inspector:
+          group: 'caption'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'top left':
+                label: 'top left'
+              'top center':
+                label: 'top center'
+              'top right':
+                label: 'top right'
+              'middle left':
+                label: 'middle left'
+              'middle center':
+                label: 'middle center'
+              'middle right':
+                label: 'middle right'
+              'bottom left':
+                label: 'bottom left'
+              'bottom center':
+                label: 'bottom center'
+              'bottom right':
+                label: 'bottom right'
+              'below':
+                label: 'below'
+    captionColor:
+      type: string
+      defaultValue: 'white'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Caption Color'
+        inspector:
+          group: 'caption'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'white':
+                label: 'white'
+              'black':
+                label: 'black'
+    captionBackground:
+      type: string
+      defaultValue: 'none'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Caption Background'
+        inspector:
+          group: 'caption'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'none':
+                label: 'none'
+              'white':
+                label: 'white'
+              'black':
+                label: 'black'
 
-# Gallery Settings mixin
 'MapSeven.Gallery:GallerySettingsMixin':
   abstract: TRUE
   properties:

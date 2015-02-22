@@ -4,6 +4,12 @@
     <f:if condition="{image}">
         <f:then>
             <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" class="img-responsive" />
+            <f:if condition="{0: captionAlignment} != {0: 'below'}">
+                <div class="carousel-caption {captionAlignment}">
+                    <f:if condition="{title}"><h3 class="caption-color-{captionColor} caption-background-{captionBackground}">{title}</h3></f:if>
+                    <f:if condition="{caption}"><p class="caption-color-{captionColor} caption-background-{captionBackground}">{caption}</p></f:if>
+                </div>
+            </f:if>
         </f:then>
         <f:else>
             <f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
@@ -13,4 +19,11 @@
             </f:security.ifAccess>
         </f:else>
     </f:if>
+
+        <f:if condition="{0: captionAlignment} == {0: 'below'}">
+            <div>
+                <f:if condition="{title}"><h3>{title}</h3></f:if>
+                <f:if condition="{caption}"><p>{caption}</p></f:if>
+            </div>
+        </f:if>
 </div>

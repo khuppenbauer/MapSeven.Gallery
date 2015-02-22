@@ -1,0 +1,60 @@
+.carousel-caption h3 {
+    font-weight: 900;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.carousel-caption p {
+    padding: 10px;
+}
+
+.carousel-caption h3.caption-color-white,
+.carousel-caption p.caption-color-white {
+    color:#fff;
+}
+
+.carousel-caption h3.caption-color-black,
+.carousel-caption p.caption-color-black {
+    color:#000;
+}
+
+.carousel-caption.top {
+    top: 5%;
+}
+
+.carousel-caption.middle {
+    top: 50%;
+    margin-top: -50px;
+    padding-top: 0px;
+}
+
+.carousel-caption.bottom {
+    bottom: 5%;
+}
+
+.carousel-caption.left {
+    left: 10%;
+    right: inherit;
+    text-align: left;
+}
+
+.carousel-caption.center {
+    left: 15%;
+    right: 15%;
+}
+
+.carousel-caption.right {
+    right: 10%;
+    left: inherit;
+    text-align: right;
+}
+
+.carousel-caption h3.caption-background-white,
+.carousel-caption p.caption-background-white {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+}
+
+.carousel-caption h3.caption-background-black,
+.carousel-caption p.caption-background-black{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+}
