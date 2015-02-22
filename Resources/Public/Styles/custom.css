@@ -1,3 +1,33 @@
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 0;
+    background: none;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-image: none;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+    top: 0;
+    margin-top: 20px;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev {
+    margin-left: 30px;
+    left: 0;
+}
+
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next {
+    margin-right: 30px;
+    right: 0;
+}
+
 .carousel-caption h3 {
     font-weight: 900;
     font-size: 24px;
