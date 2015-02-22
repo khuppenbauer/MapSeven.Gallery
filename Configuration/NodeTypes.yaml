@@ -205,6 +205,12 @@
         label: 'Stop on hover'
         inspector:
           group: 'settings'
+    autoHeight:
+      type: boolean
+      ui:
+        label: 'Auto Height'
+        inspector:
+          group: 'settings'
 
 # use this only for gallery images
 'MapSeven.Gallery:CarouselImage':
