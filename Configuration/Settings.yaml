@@ -4,6 +4,11 @@ TYPO3:
     typoScript:
       autoInclude:
         MapSeven.Gallery: true
+    nodeTypes:
+      groups:
+        gallery:
+          position: 'after plugins'
+          label: 'Gallery'
 
 MapSeven:
   Gallery:

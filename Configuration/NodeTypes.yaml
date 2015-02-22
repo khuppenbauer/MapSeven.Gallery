@@ -40,7 +40,7 @@
     - 'MapSeven.Gallery:GallerySettingsMixin'
   ui:
     label: 'Gallery'
-    group: 'plugins'
+    group: 'gallery'
     icon: 'icon-picture'
     inlineEditable: TRUE
     inspector:
@@ -86,7 +86,7 @@
     - 'MapSeven.Gallery:GallerySettingsMixin'
   ui:
     label: 'Tag Gallery'
-    group: 'plugins'
+    group: 'gallery'
     icon: 'icon-picture'
     inspector:
       groups:
@@ -139,7 +139,7 @@
     - 'TYPO3.Neos.NodeTypes:Column'
   ui:
     label: 'Carousel'
-    group: 'plugins'
+    group: 'gallery'
     icon: 'icon-picture'
     inlineEditable: TRUE
     inspector:
