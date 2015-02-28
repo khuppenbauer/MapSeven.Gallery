@@ -28,8 +28,11 @@
     right: 0;
 }
 
+.carousel-caption {
+    padding: 5px;
+}
+
 .carousel-caption h3 {
-    font-weight: 900;
     font-size: 24px;
     padding: 10px;
 }
@@ -49,7 +52,7 @@
 }
 
 .carousel-caption.top {
-    top: 5%;
+    top: 0;
 }
 
 .carousel-caption.middle {
@@ -59,11 +62,11 @@
 }
 
 .carousel-caption.bottom {
-    bottom: 5%;
+    bottom: 0;
 }
 
 .carousel-caption.left {
-    left: 10%;
+    left: 5%;
     right: inherit;
     text-align: left;
 }
@@ -74,7 +77,7 @@
 }
 
 .carousel-caption.right {
-    right: 10%;
+    right: 5%;
     left: inherit;
     text-align: right;
 }
