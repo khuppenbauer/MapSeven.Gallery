@@ -11,6 +11,7 @@ prototype(MapSeven.Gallery:Carousel) {
 	autoPlay = ${q(node).property('autoPlay') ? 'true' : 'false'}
 	stopOnHover = ${q(node).property('stopOnHover') ? 'true' : 'false'}
 	autoHeight = ${q(node).property('autoHeight') ? 'true' : 'false'}
+	singleItem = ${q(node).property('items') > 1 ? 'false' : 'true'}
 
 	carouselItemArray = ${q(node).children('image').children('[instanceof MapSeven.Gallery:CarouselImage]')}
 	// Enhance image prototype for the carousel

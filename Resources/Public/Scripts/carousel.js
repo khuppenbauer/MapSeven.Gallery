@@ -1,7 +1,7 @@
 var OwlCarousel = function () {
 
     return {
-        init: function (id, items, navigation, pagination, autoPlay, stopOnHover, autoHeight) {
+        init: function (id, items, navigation, pagination, autoPlay, stopOnHover, autoHeight, singleItem) {
             var owl = jQuery("#" + id).owlCarousel({
                 navigation : navigation, // Show next and prev buttons
                 pagination : pagination,
@@ -12,7 +12,8 @@ var OwlCarousel = function () {
                 autoPlay : autoPlay,
                 stopOnHover : stopOnHover,
                 items: items,
-                autoHeight: autoHeight
+                autoHeight: autoHeight,
+                singleItem : singleItem
             });
         }
     };
