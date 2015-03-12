@@ -1,17 +1,23 @@
 <head>
-    <f:section name="stylesheets">
+    <f:section name="stylesheets.lightbox">
         <!-- CSS lightbox -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/ashleydw/lightbox/master/dist/ekko-lightbox.css">
+    </f:section>
+    <f:section name="stylesheets.carousel">
+        <!-- CSS carousel -->
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/owl.carousel.css', package: 'MapSeven.Gallery')}">
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/owl.theme.css', package: 'MapSeven.Gallery')}">
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/custom.css', package: 'MapSeven.Gallery')}">
     </f:section>
 </head>
 <body>
-<f:section name="bodyScripts">
+<f:section name="bodyScripts.lightbox">
     <!-- JS lightbox -->
     <script src="https://cdn.rawgit.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
     <script src="{f:uri.resource(path: 'Scripts/lightbox.js', package: 'MapSeven.Gallery')}"></script>
+</f:section>
+<f:section name="bodyScripts.carousel">
+    <!-- JS carousel -->
     <script src="{f:uri.resource(path: 'Scripts/owl.carousel.min.js', package: 'MapSeven.Gallery')}"></script>
     <script src="{f:uri.resource(path: 'Scripts/carousel.js', package: 'MapSeven.Gallery')}"></script>
 </f:section>

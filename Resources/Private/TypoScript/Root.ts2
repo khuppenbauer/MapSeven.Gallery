@@ -11,7 +11,13 @@ page = Page {
 			lightbox = TypoScript:Template {
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
-				sectionName = 'stylesheets'
+				sectionName = 'stylesheets.lightbox'
+			}
+			carousel = TypoScript:Template {
+				@if.hasMap = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
+				@position = 'end'
+				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
+				sectionName = 'stylesheets.carousel'
 			}
 		}
 	}
@@ -21,7 +27,13 @@ page = Page {
 			lightbox = TypoScript:Template {
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
-				sectionName = 'bodyScripts'
+				sectionName = 'bodyScripts.lightbox'
+			}
+			carousel = TypoScript:Template {
+				@if.hasMap = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
+				@position = 'end'
+				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
+				sectionName = 'bodyScripts.carousel'
 			}
 		}
 	}
