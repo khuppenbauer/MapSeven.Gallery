@@ -127,7 +127,7 @@
           editorOptions:
             dataSourceIdentifier: 'mapseven-gallery-tag'
     previewImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'previewImage'
         reloadIfChanged: TRUE
