@@ -52,7 +52,7 @@
 }
 
 .carousel-caption.top {
-    top: 0;
+    top: 5%;
 }
 
 .carousel-caption.middle {
@@ -62,7 +62,7 @@
 }
 
 .carousel-caption.bottom {
-    bottom: 0;
+    bottom: 15%;
 }
 
 .carousel-caption.left {
