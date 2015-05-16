@@ -1,9 +1,11 @@
 
-resources:
-  methods:
-    MapSeven_Gallery_TagGallery: 'method(MapSeven\Gallery\Controller\TagGalleryController->indexAction())'
-
-acls:
-  Everybody:
-    methods:
-      MapSeven_Gallery_TagGallery: GRANT
+privilegeTargets:
+  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    MapSeven_Gallery_TagGallery:
+      matcher: method(MapSeven\Gallery\Controller\TagGalleryController->indexAction())
+roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: MapSeven_Gallery_TagGallery
+        permission: GRANT
