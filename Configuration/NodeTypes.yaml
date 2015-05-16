@@ -1,96 +1,90 @@
+
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'MapSeven.Gallery:Image': FALSE
-      'MapSeven.Gallery:CarouselImage': FALSE
-
+      'MapSeven.Gallery:Image': false
+      'MapSeven.Gallery:CarouselImage': false
 'TYPO3.Neos.NodeTypes:Image':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:ContentImageMixin'
-    - 'MapSeven.Gallery:ImageLightboxMixin'
-
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:ContentImageMixin': true
+    'MapSeven.Gallery:ImageLightboxMixin': true
 'TYPO3.Neos.NodeTypes:TextWithImage':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:TextMixin'
-    - 'TYPO3.Neos.NodeTypes:ContentImageMixin'
-    - 'MapSeven.Gallery:ImageLightboxMixin'
-
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:TextMixin': true
+    'TYPO3.Neos.NodeTypes:ContentImageMixin': true
+    'MapSeven.Gallery:ImageLightboxMixin': true
 'MapSeven.Gallery:ImageLightboxMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     clickEnlarge:
       type: boolean
       ui:
-        label: 'ClickEnlarge'
+        label: ClickEnlarge
         inspector:
-          group: 'image'
+          group: image
     showInGallery:
       type: string
       ui:
         label: 'show also in Gallery'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'image'
-
+          group: image
 'MapSeven.Gallery:Gallery':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Column'
-    - 'MapSeven.Gallery:GallerySettingsMixin'
+    'TYPO3.Neos.NodeTypes:Column': true
+    'MapSeven.Gallery:GallerySettingsMixin': true
   ui:
-    label: 'Gallery'
-    group: 'gallery'
-    icon: 'icon-picture'
-    inlineEditable: TRUE
+    label: Gallery
+    group: gallery
+    icon: icon-picture
+    inlineEditable: true
     inspector:
       groups:
-        'settings':
+        settings:
           label: 'Gallery Settings'
   childNodes:
     image:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          'MapSeven.Gallery:Image': TRUE
-          '*': FALSE
-
-# use this only for gallery images
+          'MapSeven.Gallery:Image': true
+          '*': false
 'MapSeven.Gallery:Image':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:ImageMixin'
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:ImageMixin': true
   ui:
-    label: 'Image'
-    icon: 'icon-picture'
+    label: Image
+    icon: icon-picture
   properties:
     caption:
       type: string
       defaultValue: ''
       ui:
-        label: 'Caption'
-        reloadIfChanged: TRUE
-        inlineEditable: FALSE
+        label: Caption
+        reloadIfChanged: true
+        inlineEditable: false
         inspector:
-          group: 'image'
+          group: image
     hideInOverview:
       type: boolean
       ui:
         label: 'Hide in Overview'
         inspector:
-          group: 'image'
-
+          group: image
 'MapSeven.Gallery:TagGallery':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'MapSeven.Gallery:GallerySettingsMixin'
+    'TYPO3.Neos:Content': true
+    'MapSeven.Gallery:GallerySettingsMixin': true
   ui:
     label: 'Tag Gallery'
-    group: 'gallery'
-    icon: 'icon-picture'
+    group: gallery
+    icon: icon-picture
     inspector:
       groups:
-        'settings':
+        settings:
           label: 'Gallery Settings'
   properties:
     width:
@@ -98,150 +92,147 @@
       defaultValue: ''
       ui:
         label: 'Image Width'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'settings'
+          group: settings
     height:
       type: string
       defaultValue: ''
       ui:
         label: 'Image Height'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'settings'
+          group: settings
     title:
       type: string
       defaultValue: ''
       ui:
-        label: 'Title'
-        reloadIfChanged: TRUE
+        label: Title
+        reloadIfChanged: true
         inspector:
-          group: 'settings'
+          group: settings
     tags:
       type: array
       ui:
-        label: 'Tags'
+        label: Tags
         inspector:
-          group: 'settings'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          group: settings
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            dataSourceIdentifier: 'mapseven-gallery-tag'
+            dataSourceIdentifier: mapseven-gallery-tag
     previewImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: 'previewImage'
-        reloadIfChanged: TRUE
+        label: previewImage
+        reloadIfChanged: true
         inspector:
-          group: 'settings'
-
+          group: settings
 'MapSeven.Gallery:Carousel':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Column'
+    'TYPO3.Neos.NodeTypes:Column': true
   ui:
-    label: 'Carousel'
-    group: 'gallery'
-    icon: 'icon-picture'
-    inlineEditable: TRUE
+    label: Carousel
+    group: gallery
+    icon: icon-picture
+    inlineEditable: true
     inspector:
       groups:
-        'settings':
+        settings:
           label: 'Carousel Settings'
   childNodes:
-    'image':
+    image:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          'MapSeven.Gallery:CarouselImage': TRUE
-          '*': FALSE
+          'MapSeven.Gallery:CarouselImage': true
+          '*': false
   properties:
     items:
       type: string
       defaultValue: '1'
       ui:
         label: 'Items displayed at a time'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'settings'
+          group: settings
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              '1':
+              1:
                 label: '1'
-              '2':
+              2:
                 label: '2'
-              '3':
+              3:
                 label: '3'
-              '4':
+              4:
                 label: '4'
-              '5':
+              5:
                 label: '5'
-              '6':
+              6:
                 label: '6'
-              '7':
+              7:
                 label: '7'
-              '8':
+              8:
                 label: '8'
     navigation:
       type: boolean
       ui:
         label: 'Show Navigation'
         inspector:
-          group: 'settings'
+          group: settings
     pagination:
       type: boolean
       ui:
         label: 'Show Pagination'
         inspector:
-          group: 'settings'
+          group: settings
     autoPlay:
       type: boolean
       ui:
-        label: 'Autoplay'
+        label: Autoplay
         inspector:
-          group: 'settings'
+          group: settings
     stopOnHover:
       type: boolean
       ui:
         label: 'Stop on hover'
         inspector:
-          group: 'settings'
+          group: settings
     autoHeight:
       type: boolean
       ui:
         label: 'Auto Height'
         inspector:
-          group: 'settings'
-
-# use this only for gallery images
+          group: settings
 'MapSeven.Gallery:CarouselImage':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:ImageMixin'
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:ImageMixin': true
   ui:
-    label: 'Image'
-    icon: 'icon-picture'
+    label: Image
+    icon: icon-picture
     inspector:
       groups:
-        'caption':
-          label: 'Caption'
+        caption:
+          label: Caption
   properties:
     caption:
       type: string
       defaultValue: ''
       ui:
-        label: 'Caption'
-        reloadIfChanged: TRUE
-        inlineEditable: FALSE
+        label: Caption
+        reloadIfChanged: true
+        inlineEditable: false
         inspector:
-          group: 'caption'
+          group: caption
     captionAlignment:
       type: string
       defaultValue: 'bottom center'
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         label: 'Caption Alignment'
         inspector:
-          group: 'caption'
+          group: caption
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -263,89 +254,88 @@
                 label: 'bottom center'
               'bottom right':
                 label: 'bottom right'
-              'below':
-                label: 'below'
+              below:
+                label: below
     captionColor:
       type: string
-      defaultValue: 'white'
+      defaultValue: white
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         label: 'Caption Color'
         inspector:
-          group: 'caption'
+          group: caption
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'white':
-                label: 'white'
-              'black':
-                label: 'black'
+              white:
+                label: white
+              black:
+                label: black
     captionBackground:
       type: string
-      defaultValue: 'none'
+      defaultValue: none
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         label: 'Caption Background'
         inspector:
-          group: 'caption'
+          group: caption
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'none':
-                label: 'none'
-              'white':
-                label: 'white'
-              'black':
-                label: 'black'
-
+              none:
+                label: none
+              white:
+                label: white
+              black:
+                label: black
 'MapSeven.Gallery:GallerySettingsMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     marginBottom:
       type: string
-      defaultValue: 'margin-bottom-20'
+      defaultValue: margin-bottom-20
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         label: 'Margin Bottom'
         inspector:
-          group: 'settings'
+          group: settings
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              '0':
+              0:
                 label: ''
-              '5':
+              5:
                 label: '5'
-              '10':
+              10:
                 label: '10'
-              '15':
+              15:
                 label: '15'
-              '20':
+              20:
                 label: '20'
-              '25':
+              25:
                 label: '25'
-              '30':
+              30:
                 label: '30'
     columns:
       type: string
       defaultValue: '3'
       ui:
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         label: 'Images per Row'
         inspector:
-          group: 'settings'
+          group: settings
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              '1':
+              1:
                 label: '12'
-              '2':
+              2:
                 label: '6'
-              '3':
+              3:
                 label: '4'
-              '4':
+              4:
                 label: '3'
-              '6':
+              6:
                 label: '2'
-              '12':
+              12:
                 label: '1'
