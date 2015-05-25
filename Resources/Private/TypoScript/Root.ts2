@@ -14,7 +14,7 @@ page = Page {
 				sectionName = 'stylesheets.lightbox'
 			}
 			carousel = TypoScript:Template {
-				@if.hasMap = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
+				@if.hasCarousel = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
 				sectionName = 'stylesheets.carousel'
@@ -30,7 +30,7 @@ page = Page {
 				sectionName = 'bodyScripts.lightbox'
 			}
 			carousel = TypoScript:Template {
-				@if.hasMap = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
+				@if.hasCarousel = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
 				sectionName = 'bodyScripts.carousel'

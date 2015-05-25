@@ -4,7 +4,7 @@ prototype(MapSeven.Gallery:Carousel) {
 		nodePath = 'image'
 		iterationName = 'carouselItemsIteration'
 		attributes.class = 'owl-carousel owl-theme col-md-12'
-		attributes.id = ${'owl-carousel-' + node.identifier}
+		attributes.id = ${'owl-carousel-' + q(node).parents().property('_identifier')}
 	}
 	pagination = ${q(node).property('pagination') ? 'true' : 'false'}
 	navigation = ${q(node).property('navigation') ? 'true' : 'false'}

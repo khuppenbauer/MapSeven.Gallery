@@ -70,7 +70,7 @@ class TagGalleryController extends ActionController {
 				/** @var Asset $previewImage */
 				$previewImage = !empty($properties['previewImage']) ? $properties['previewImage'] : NULL;
 				if ($previewImage !== NULL) {
-					$originalPreviewÍmage = $previewImage->getOriginalImage();
+					$originalPreviewÍmage = $previewImage->getOriginalAsset();
 					$i = 2;
 					foreach ($assets as $key => $asset) {
 						if ($asset->getIdentifier() !== $originalPreviewÍmage->getIdentifier()) {
