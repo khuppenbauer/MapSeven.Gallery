@@ -1,0 +1,17 @@
+prototype(MapSeven.Gallery:TagCarousel) {
+	data = ${q(node).tags().get()}
+	properties = ${node.properties}
+	imageClassName = ${Configuration.setting('MapSeven.Gallery.imageClassName')}
+	maximumWidth = ${Configuration.setting('MapSeven.Gallery').presets.tagCarousel.maximumWidth}
+	maximumHeight = ${Configuration.setting('MapSeven.Gallery').presets.tagCarousel.maximumHeight}
+	allowCropping = ${Configuration.setting('MapSeven.Gallery').presets.tagCarousel.allowCropping}
+	allowUpScaling = ${Configuration.setting('MapSeven.Gallery').presets.tagCarousel.allowUpScaling}
+	pagination = ${q(node).property('pagination') ? 'true' : 'false'}
+	navigation = ${q(node).property('navigation') ? 'true' : 'false'}
+	autoPlay = ${q(node).property('autoPlay') ? 'true' : 'false'}
+	stopOnHover = ${q(node).property('stopOnHover') ? 'true' : 'false'}
+	autoHeight = ${q(node).property('autoHeight') ? 'true' : 'false'}
+	singleItem = ${q(node).property('items') > 1 ? 'false' : 'true'}
+	attributes.class = 'owl-carousel owl-theme col-md-12'
+	attributes.id = ${'owl-carousel-' + q(node).property('_identifier')}
+}

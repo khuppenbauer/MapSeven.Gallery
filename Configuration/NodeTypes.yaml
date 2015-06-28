@@ -207,3 +207,16 @@
                 label: white
               black:
                 label: black
+'MapSeven.Gallery:TagCarousel':
+  superTypes:
+    'TYPO3.Neos:Content': true
+    'MapSeven.Gallery:TagSettingsMixin': true
+    'MapSeven.Gallery:CarouselSettingsMixin': true
+  ui:
+    label: 'Tag Carousel'
+    group: gallery
+    icon: icon-picture
+    inspector:
+      groups:
+        settings:
+          label: 'Gallery Settings'

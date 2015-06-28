@@ -24,3 +24,8 @@ MapSeven:
         maximumHeight: 480
         allowCropping: FALSE
         allowUpScaling: FALSE
+      tagCarousel:
+        maximumWidth: 200
+        maximumHeight: 100
+        allowCropping: TRUE
+        allowUpScaling: TRUE

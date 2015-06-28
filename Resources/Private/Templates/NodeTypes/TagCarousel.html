@@ -1,0 +1,14 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<div class="row">
+    <div{attributes -> f:format.raw()}>
+        <f:for each="{data.assets}" as="image" key="key" iteration="assetsIterator">
+            <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" class="{imageClassName}" />
+        </f:for>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        OwlCarousel.init('owl-carousel-{node.identifier}', {node.properties.items}, {navigation}, {pagination}, {autoPlay}, {stopOnHover}, {autoHeight}, {singleItem});
+    });
+</script>
+</div>
