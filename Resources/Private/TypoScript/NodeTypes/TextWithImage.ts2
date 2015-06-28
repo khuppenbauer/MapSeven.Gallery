@@ -1,6 +1,3 @@
 prototype(TYPO3.Neos.NodeTypes:TextWithImage) {
 	templatePath = 'resource://MapSeven.Gallery/Private/Templates/NodeTypes/TextWithImage.html'
-	imgClass = ${Configuration.setting('MapSeven.Gallery.imgClass')}
-	lightboxWidth = ${Configuration.setting('MapSeven.Gallery.lightboxWidth')}
-	lightboxHeight = ${Configuration.setting('MapSeven.Gallery.lightboxHeight')}
 }

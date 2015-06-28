@@ -4,11 +4,11 @@
     <f:then>
         <f:if condition="{hideInOverview}">
             <f:then>
-                <div data-toggle="lightbox" data-gallery="{node.parent.identifier}" data-title="{title}" data-footer="{iteration.cycle}/{count} {caption}" data-remote="{media:uri.image(image:image, maximumWidth:lightboxWidth, maximumHeight:lightboxHeight, allowUpScaling:true)}"></div>
+                <div data-toggle="lightbox" data-gallery="{node.parent.identifier}" data-title="{title}" data-footer="{iteration.cycle}/{count} {caption}" data-remote="{media:uri.image(image:image, maximumWidth:lightbox.maximumWidth, maximumHeight:lightbox.maximumHeight, allowCropping:lightbox.allowCropping, allowUpScaling:lightbox.allowUpScaling)}"></div>
             </f:then>
             <f:else>
-                <a href="{media:uri.image(image:image, maximumWidth:lightboxWidth, maximumHeight:lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-gallery="{node.parent.identifier}" class="col-sm-{node.parent.parent.properties.columns} thumbnail" style="margin-bottom: {node.parent.parent.properties.marginBottom}px;" data-title="{title}" data-footer="{iteration.cycle}/{count} {caption}">
-                    <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" class="{imgClass}" />
+                <a href="{media:uri.image(image:image, maximumWidth:lightbox.maximumWidth, maximumHeight:lightbox.maximumHeight, allowCropping:lightbox.allowCropping, allowUpScaling:lightbox.allowUpScaling)}" data-toggle="lightbox" data-gallery="{node.parent.identifier}" class="col-sm-{node.parent.parent.properties.columns} thumbnail" style="margin-bottom: {node.parent.parent.properties.marginBottom}px;" data-title="{title}" data-footer="{iteration.cycle}/{count} {caption}">
+                    <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" class="{imageClass}" />
                 </a>
             </f:else>
         </f:if>

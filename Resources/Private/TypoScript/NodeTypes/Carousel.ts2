@@ -20,5 +20,6 @@ prototype(MapSeven.Gallery:Carousel) {
 		templatePath = 'resource://MapSeven.Gallery/Private/Templates/TypoScriptObjects/CarouselItem.html'
 		// We want to use the item iterator in the template so we have to store it in ts.
 		iteration = ${carouselItemsIteration}
+		imageClassName = ${Configuration.setting('MapSeven.Gallery.imageClassName')}
 	}
 }

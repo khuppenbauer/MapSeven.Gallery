@@ -12,8 +12,15 @@ TYPO3:
 
 MapSeven:
   Gallery:
-    imgClass: img-responsive
-    lightboxWidth: 640
-    lightboxHeight: 480
-    maximumWidth: 1024
-    maximumHeight: 768
+    imageClassName: img-responsive
+    presets:
+      preview:
+        maximumWidth: 680
+        maximumHeight: 453
+        allowCropping: TRUE
+        allowUpScaling: TRUE
+      lightbox:
+        maximumWidth: 640
+        maximumHeight: 480
+        allowCropping: FALSE
+        allowUpScaling: FALSE

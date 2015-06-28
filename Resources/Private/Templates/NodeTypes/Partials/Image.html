@@ -1,23 +1,23 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
-<figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
+<figure>
 <f:if condition="{image}">
     <f:then>
         <f:if condition="{link}">
             <f:then>
                 <a class="thumbnail" href="{link}"><media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-}" allowUpScaling="{allowUpScaling}" class="{imgClass}" /></a>
+}" allowUpScaling="{allowUpScaling}" class="{imageClassName}" /></a>
             </f:then>
             <f:else>
                 <f:if condition="{clickEnlarge}">
                     <f:then>
-                        <a class="thumbnail" href="{media:uri.image(image:image, maximumWidth:lightboxWidth, maximumHeight:lightboxHeight, allowUpScaling:true)}" data-toggle="lightbox" data-title="{title}" data-parent="" data-gallery="{showInGallery -> f:format.stripTags()}" data-footer="{caption -> f:format.stripTags()}">
+                        <a class="thumbnail" href="{media:uri.image(image:image, maximumWidth:lightbox.maximumWidth, maximumHeight:lightbox.maximumHeight, allowCropping:lightbox.allowCropping, allowUpScaling:lightbox.allowUpScaling)}" data-toggle="lightbox" data-title="{title}" data-parent="" data-gallery="{showInGallery -> f:format.stripTags()}" data-footer="{caption -> f:format.stripTags()}">
                         <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-}" allowUpScaling="{allowUpScaling}" class="{imgClass}" /></a>
+}" allowUpScaling="{allowUpScaling}" class="{imageClassName}" /></a>
                     </f:then>
                     <f:else>
                         <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-}" allowUpScaling="{allowUpScaling}" class="{imgClass}" />
+}" allowUpScaling="{allowUpScaling}" class="{imageClassName}" />
                     </f:else>
                 </f:if>
             </f:else>

@@ -3,7 +3,7 @@
 <div{attributes -> f:format.raw()}>
     <f:if condition="{image}">
         <f:then>
-            <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" class="img-responsive" />
+            <media:image image="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" class="{imageClassName}" />
             <f:if condition="{0: captionAlignment} != {0: 'below'}">
                 <div class="carousel-caption {captionAlignment}">
                     <f:if condition="{title}"><h3 class="caption-color-{captionColor} caption-background-{captionBackground}">{title}</h3></f:if>

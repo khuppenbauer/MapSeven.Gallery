@@ -78,6 +78,7 @@
   superTypes:
     'TYPO3.Neos:Content': true
     'MapSeven.Gallery:GallerySettingsMixin': true
+    'MapSeven.Gallery:TagSettingsMixin': true
   ui:
     label: 'Tag Gallery'
     group: gallery
@@ -87,22 +88,6 @@
         settings:
           label: 'Gallery Settings'
   properties:
-    width:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Image Width'
-        reloadIfChanged: true
-        inspector:
-          group: settings
-    height:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Image Height'
-        reloadIfChanged: true
-        inspector:
-          group: settings
     title:
       type: string
       defaultValue: ''
@@ -111,15 +96,6 @@
         reloadIfChanged: true
         inspector:
           group: settings
-    tags:
-      type: array
-      ui:
-        label: Tags
-        inspector:
-          group: settings
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            dataSourceIdentifier: mapseven-gallery-tag
     previewImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -130,6 +106,7 @@
 'MapSeven.Gallery:Carousel':
   superTypes:
     'TYPO3.Neos.NodeTypes:Column': true
+    'MapSeven.Gallery:CarouselSettingsMixin': true
   ui:
     label: Carousel
     group: gallery
@@ -146,64 +123,6 @@
         nodeTypes:
           'MapSeven.Gallery:CarouselImage': true
           '*': false
-  properties:
-    items:
-      type: string
-      defaultValue: '1'
-      ui:
-        label: 'Items displayed at a time'
-        reloadIfChanged: true
-        inspector:
-          group: settings
-          editor: Content/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            values:
-              1:
-                label: '1'
-              2:
-                label: '2'
-              3:
-                label: '3'
-              4:
-                label: '4'
-              5:
-                label: '5'
-              6:
-                label: '6'
-              7:
-                label: '7'
-              8:
-                label: '8'
-    navigation:
-      type: boolean
-      ui:
-        label: 'Show Navigation'
-        inspector:
-          group: settings
-    pagination:
-      type: boolean
-      ui:
-        label: 'Show Pagination'
-        inspector:
-          group: settings
-    autoPlay:
-      type: boolean
-      ui:
-        label: Autoplay
-        inspector:
-          group: settings
-    stopOnHover:
-      type: boolean
-      ui:
-        label: 'Stop on hover'
-        inspector:
-          group: settings
-    autoHeight:
-      type: boolean
-      ui:
-        label: 'Auto Height'
-        inspector:
-          group: settings
 'MapSeven.Gallery:CarouselImage':
   superTypes:
     'TYPO3.Neos:Content': true
@@ -288,54 +207,3 @@
                 label: white
               black:
                 label: black
-'MapSeven.Gallery:GallerySettingsMixin':
-  abstract: true
-  properties:
-    marginBottom:
-      type: string
-      defaultValue: margin-bottom-20
-      ui:
-        reloadIfChanged: true
-        label: 'Margin Bottom'
-        inspector:
-          group: settings
-          editor: Content/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            values:
-              0:
-                label: ''
-              5:
-                label: '5'
-              10:
-                label: '10'
-              15:
-                label: '15'
-              20:
-                label: '20'
-              25:
-                label: '25'
-              30:
-                label: '30'
-    columns:
-      type: string
-      defaultValue: '3'
-      ui:
-        reloadIfChanged: true
-        label: 'Images per Row'
-        inspector:
-          group: settings
-          editor: Content/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            values:
-              1:
-                label: '12'
-              2:
-                label: '6'
-              3:
-                label: '4'
-              4:
-                label: '3'
-              6:
-                label: '2'
-              12:
-                label: '1'

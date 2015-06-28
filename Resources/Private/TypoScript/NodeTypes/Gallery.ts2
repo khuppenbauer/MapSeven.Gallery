@@ -10,8 +10,16 @@ prototype(MapSeven.Gallery:Gallery) {
 		templatePath = 'resource://MapSeven.Gallery/Private/Templates/TypoScriptObjects/GalleryItem.html'
 		iteration = ${galleryItemsIteration}
 		count = ${q(node).parents().children('[instanceof MapSeven.Gallery:Image]').count()}
-		imgClass = ${Configuration.setting('MapSeven.Gallery.imgClass')}
-		lightboxWidth = ${Configuration.setting('MapSeven.Gallery.lightboxWidth')}
-		lightboxHeight = ${Configuration.setting('MapSeven.Gallery.lightboxHeight')}
+		imageClassName = ${Configuration.setting('MapSeven.Gallery.imageClassName')}
+		maximumWidth = ${Configuration.setting('MapSeven.Gallery').presets.preview.maximumWidth}
+		maximumHeight = ${Configuration.setting('MapSeven.Gallery').presets.preview.maximumHeight}
+		allowCropping = ${Configuration.setting('MapSeven.Gallery').presets.preview.allowCropping}
+		allowUpScaling = ${Configuration.setting('MapSeven.Gallery').presets.preview.allowUpScaling}
+		lightbox {
+			maximumWidth = ${Configuration.setting('MapSeven.Gallery').presets.lightbox.maximumWidth}
+			maximumHeight = ${Configuration.setting('MapSeven.Gallery').presets.lightbox.maximumHeight}
+			allowCropping = ${Configuration.setting('MapSeven.Gallery').presets.lightbox.allowCropping}
+			allowUpScaling = ${Configuration.setting('MapSeven.Gallery').presets.lightbox.allowUpScaling}
+		}
 	}
 }
