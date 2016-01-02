@@ -96,8 +96,6 @@ class TagsOperation extends AbstractOperation {
 				$tagArray[] = $this->tagRepository->findOneByLabel($tag);
 			}
 			$assets = $this->assetRepository->findBySearchTermOrTags('*', $tagArray)->toArray();
-		} else {
-			$assets = $this->assetRepository->findAll()->toArray();
 		}
 		if (isset($properties['limit'])) {
 			$assets = array_slice($assets, 0, $properties['limit']);
@@ -108,7 +106,11 @@ class TagsOperation extends AbstractOperation {
 				if (is_string($previewImage)) {
 					$previewImage = $this->assetRepository->findByIdentifier($previewImage);
 				}
-				$originalPreviewImage = $previewImage->getOriginalAsset();
+				if ($previewImage instanceof \TYPO3\Media\Domain\Model\ImageVariant) {
+					$originalPreviewImage = $previewImage->getOriginalAsset();					
+				} else {
+					$originalPreviewImage = $previewImage;										
+				}
 				$i = 2;
 				foreach ($assets as $asset) {
 					if ($asset->getIdentifier() !== $originalPreviewImage->getIdentifier()) {
