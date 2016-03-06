@@ -103,6 +103,39 @@
         reloadIfChanged: true
         inspector:
           group: settings
+    orderBy:
+      type: string
+      defaultValue: lastModified
+      ui:
+        label: Sorting by
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              title:
+                label: Title
+              lastModified:
+                label: Last Modified
+              resource.filename:
+                label: Filename
+    orderDir:
+      type: string
+      defaultValue: DESC
+      ui:
+        label: Sorting Direction
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              ASC:
+                label: ascending
+              DESC:
+                label: descending
+
 'MapSeven.Gallery:Carousel':
   superTypes:
     'TYPO3.Neos.NodeTypes:Column': true
