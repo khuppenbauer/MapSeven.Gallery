@@ -12,8 +12,8 @@ namespace MapSeven\Gallery\TypoScript\FlowQueryOperations;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use Neos\Utility\ObjectAccess;
 use Neos\Utility\Arrays;
