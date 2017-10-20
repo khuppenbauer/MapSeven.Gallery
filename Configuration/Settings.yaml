@@ -20,11 +20,11 @@ MapSeven:
         allowUpScaling: true
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        MapSeven.Gallery: true
     nodeTypes:
       groups:
         gallery:
           position: 'after plugins'
           label: Gallery
+    fusion:
+      autoInclude:
+        MapSeven.Gallery: true
