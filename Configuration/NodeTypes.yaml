@@ -4,16 +4,16 @@
     nodeTypes:
       'MapSeven.Gallery:Image': false
       'MapSeven.Gallery:CarouselImage': false
-'TYPO3.Neos.NodeTypes:Image':
+'Neos.NodeTypes:Image':
   superTypes:
     'TYPO3.Neos:Content': true
-    'TYPO3.Neos.NodeTypes:ContentImageMixin': true
+    'Neos.NodeTypes:ContentImageMixin': true
     'MapSeven.Gallery:ImageLightboxMixin': true
-'TYPO3.Neos.NodeTypes:TextWithImage':
+'Neos.NodeTypes:TextWithImage':
   superTypes:
     'TYPO3.Neos:Content': true
-    'TYPO3.Neos.NodeTypes:TextMixin': true
-    'TYPO3.Neos.NodeTypes:ContentImageMixin': true
+    'Neos.NodeTypes:TextMixin': true
+    'Neos.NodeTypes:ContentImageMixin': true
     'MapSeven.Gallery:ImageLightboxMixin': true
 'MapSeven.Gallery:ImageLightboxMixin':
   abstract: true
@@ -33,7 +33,7 @@
           group: image
 'MapSeven.Gallery:Gallery':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Column': true
+    'Neos.NodeTypes:Column': true
     'MapSeven.Gallery:GallerySettingsMixin': true
   ui:
     label: Gallery
@@ -54,7 +54,7 @@
 'MapSeven.Gallery:Image':
   superTypes:
     'TYPO3.Neos:Content': true
-    'TYPO3.Neos.NodeTypes:ImageMixin': true
+    'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Image
     icon: icon-picture
@@ -138,7 +138,7 @@
 
 'MapSeven.Gallery:Carousel':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Column': true
+    'Neos.NodeTypes:Column': true
     'MapSeven.Gallery:CarouselSettingsMixin': true
   ui:
     label: Carousel
@@ -159,7 +159,7 @@
 'MapSeven.Gallery:CarouselImage':
   superTypes:
     'TYPO3.Neos:Content': true
-    'TYPO3.Neos.NodeTypes:ImageMixin': true
+    'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Image
     icon: icon-picture
