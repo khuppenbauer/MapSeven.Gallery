@@ -1,5 +1,5 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 <f:if condition="{previewImage}">
     <f:then>
         <a href="{media:uri.image(image:previewImage, maximumWidth:lightbox.maximumWidth, maximumHeight:lightbox.maximumHeight, allowCropping:lightbox.allowCropping, allowUpScaling:lightbox.allowUpScaling)}" data-toggle="lightbox" data-gallery="{node.identifier}" class="thumbnail" data-title="{properties.title}" data-footer="1/{data.count}">

@@ -17,8 +17,8 @@ use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use Neos\Utility\ObjectAccess;
 use Neos\Utility\Arrays;
-use TYPO3\Media\Domain\Repository\TagRepository;
-use TYPO3\Media\Domain\Repository\AssetRepository;
+use Neos\Media\Domain\Repository\TagRepository;
+use Neos\Media\Domain\Repository\AssetRepository;
 
 /**
  * FlowQuery that return the assets with the given tag(s)
@@ -108,7 +108,7 @@ class TagsOperation extends AbstractOperation {
 				if (is_string($previewImage)) {
 					$previewImage = $this->assetRepository->findByIdentifier($previewImage);
 				}
-				if ($previewImage instanceof \TYPO3\Media\Domain\Model\ImageVariant) {
+				if ($previewImage instanceof \Neos\Media\Domain\Model\ImageVariant) {
 					$originalPreviewImage = $previewImage->getOriginalAsset();					
 				} else {
 					$originalPreviewImage = $previewImage;										

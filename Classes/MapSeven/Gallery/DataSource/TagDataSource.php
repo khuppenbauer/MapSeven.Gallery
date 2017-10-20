@@ -4,8 +4,8 @@ namespace MapSeven\Gallery\DataSource;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\Neos\Service\DataSource\AbstractDataSource;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
-use TYPO3\Media\Domain\Repository\TagRepository;
-use TYPO3\Media\Domain\Repository\AssetRepository;
+use Neos\Media\Domain\Repository\TagRepository;
+use Neos\Media\Domain\Repository\AssetRepository;
 
 /**
  * Class TagDataSource
