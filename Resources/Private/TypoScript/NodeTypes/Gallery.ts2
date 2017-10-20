@@ -1,6 +1,6 @@
 prototype(MapSeven.Gallery:Gallery) {
 	attributes.class = 'row'
-	image = TYPO3.Neos:ContentCollection {
+	image = Neos.Neos:ContentCollection {
 		nodePath = 'image'
 		content.iterationName = 'galleryItemsIteration'
 	}

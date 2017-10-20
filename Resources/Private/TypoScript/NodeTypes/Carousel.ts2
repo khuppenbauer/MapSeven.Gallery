@@ -1,6 +1,6 @@
 prototype(MapSeven.Gallery:Carousel) {
 	attributes.class = 'row'
-	image = TYPO3.Neos:ContentCollection {
+	image = Neos.Neos:ContentCollection {
 		nodePath = 'image'
 		iterationName = 'carouselItemsIteration'
 		attributes.class = 'owl-carousel owl-theme col-md-12'
