@@ -3,7 +3,7 @@ namespace MapSeven\Gallery\DataSource;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\Media\Domain\Repository\TagRepository;
 use Neos\Media\Domain\Repository\AssetRepository;
 
