@@ -15,8 +15,8 @@ namespace MapSeven\Gallery\TypoScript\FlowQueryOperations;
 use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Reflection\ObjectAccess;
-use Neos\Flow\Utility\Arrays;
+use Neos\Utility\ObjectAccess;
+use Neos\Utility\Arrays;
 use TYPO3\Media\Domain\Repository\TagRepository;
 use TYPO3\Media\Domain\Repository\AssetRepository;
 
@@ -89,7 +89,7 @@ class TagsOperation extends AbstractOperation {
 		}
 
 		$element = $context[0];
-		$properties = \Neos\Flow\Reflection\ObjectAccess::getPropertyPath($element, self::PROPERTYPATH);
+		$properties = \Neos\Utility\ObjectAccess::getPropertyPath($element, self::PROPERTYPATH);
 		$this->assetRepository->setDefaultOrderings(array($properties['orderBy'] => $properties['orderDir']));
 		$tagArray = array();
 		$output = array();
