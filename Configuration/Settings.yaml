@@ -1,5 +1,24 @@
 
-TYPO3:
+MapSeven:
+  Gallery:
+    imageClassName: img-responsive
+    presets:
+      preview:
+        maximumWidth: 680
+        maximumHeight: 453
+        allowCropping: true
+        allowUpScaling: true
+      lightbox:
+        maximumWidth: 640
+        maximumHeight: 480
+        allowCropping: false
+        allowUpScaling: false
+      tagCarousel:
+        maximumWidth: 200
+        maximumHeight: 100
+        allowCropping: true
+        allowUpScaling: true
+Neos:
   Neos:
     typoScript:
       autoInclude:
@@ -8,24 +27,4 @@ TYPO3:
       groups:
         gallery:
           position: 'after plugins'
-          label: 'Gallery'
-
-MapSeven:
-  Gallery:
-    imageClassName: img-responsive
-    presets:
-      preview:
-        maximumWidth: 680
-        maximumHeight: 453
-        allowCropping: TRUE
-        allowUpScaling: TRUE
-      lightbox:
-        maximumWidth: 640
-        maximumHeight: 480
-        allowCropping: FALSE
-        allowUpScaling: FALSE
-      tagCarousel:
-        maximumWidth: 200
-        maximumHeight: 100
-        allowCropping: TRUE
-        allowUpScaling: TRUE
+          label: Gallery

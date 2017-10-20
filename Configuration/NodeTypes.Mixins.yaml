@@ -106,6 +106,6 @@
         label: Tags
         inspector:
           group: settings
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: mapseven-gallery-tag

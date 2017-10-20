@@ -1,17 +1,17 @@
 
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'MapSeven.Gallery:Image': false
       'MapSeven.Gallery:CarouselImage': false
 'Neos.NodeTypes:Image':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'Neos.NodeTypes:ContentImageMixin': true
     'MapSeven.Gallery:ImageLightboxMixin': true
 'Neos.NodeTypes:TextWithImage':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'Neos.NodeTypes:TextMixin': true
     'Neos.NodeTypes:ContentImageMixin': true
     'MapSeven.Gallery:ImageLightboxMixin': true
@@ -46,14 +46,14 @@
           label: 'Gallery Settings'
   childNodes:
     image:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'MapSeven.Gallery:Image': true
           '*': false
 'MapSeven.Gallery:Image':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Image
@@ -76,7 +76,7 @@
           group: image
 'MapSeven.Gallery:TagGallery':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'MapSeven.Gallery:GallerySettingsMixin': true
     'MapSeven.Gallery:TagSettingsMixin': true
   ui:
@@ -151,14 +151,14 @@
           label: 'Carousel Settings'
   childNodes:
     image:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'MapSeven.Gallery:CarouselImage': true
           '*': false
 'MapSeven.Gallery:CarouselImage':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Image
@@ -242,7 +242,7 @@
                 label: black
 'MapSeven.Gallery:TagCarousel':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'MapSeven.Gallery:TagSettingsMixin': true
     'MapSeven.Gallery:CarouselSettingsMixin': true
   ui:
