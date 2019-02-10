@@ -4,17 +4,16 @@ include: NodeTypes/Gallery.ts2
 include: NodeTypes/TagGallery.ts2
 include: NodeTypes/Carousel.ts2
 include: NodeTypes/TagCarousel.ts2
-namespace: TypoScript=Neos.Fusion
 
 page = Neos.Neos:Page {
 	head {
 		stylesheets {
-			lightbox = TypoScript:Template {
+			lightbox = Neos.Fusion:Template {
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
 				sectionName = 'stylesheets.lightbox'
 			}
-			carousel = TypoScript:Template {
+			carousel = Neos.Fusion:Template {
 				@if.hasCarousel = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
@@ -25,12 +24,12 @@ page = Neos.Neos:Page {
 
 	body {
 		javascripts {
-			lightbox = TypoScript:Template {
+			lightbox = Neos.Fusion:Template {
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
 				sectionName = 'bodyScripts.lightbox'
 			}
-			carousel = TypoScript:Template {
+			carousel = Neos.Fusion:Template {
 				@if.hasCarousel = ${q(node).find('[instanceof MapSeven.Gallery:Carousel]').is()}
 				@position = 'end'
 				templatePath = 'resource://MapSeven.Gallery/Private/Templates/Page/Default.html'
