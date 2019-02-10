@@ -6,7 +6,7 @@ include: NodeTypes/Carousel.ts2
 include: NodeTypes/TagCarousel.ts2
 namespace: TypoScript=Neos.Fusion
 
-page = Page {
+page = Neos.Neos:Page {
 	head {
 		stylesheets {
 			lightbox = TypoScript:Template {
