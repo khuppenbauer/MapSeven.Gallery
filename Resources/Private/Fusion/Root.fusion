@@ -1,11 +1,6 @@
-include: NodeTypes/Image.ts2
-include: NodeTypes/TextWithImage.ts2
-include: NodeTypes/Gallery.ts2
-include: NodeTypes/TagGallery.ts2
-include: NodeTypes/Carousel.ts2
-include: NodeTypes/TagCarousel.ts2
+include: NodeTypes/*
 
-page = Neos.Neos:Page {
+prototype(Neos.Neos:Page) {
 	head {
 		stylesheets {
 			lightbox = Neos.Fusion:Template {
